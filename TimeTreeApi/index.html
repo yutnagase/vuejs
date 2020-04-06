@@ -1,0 +1,29 @@
+<html lang='ja'>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="app.js" defer></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="card">
+            <div class="card-header">
+                <span>予定表</span>
+            </div>
+
+            <div id="app" class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>タイトル</th><th>開始</th><th>終了</th>
+                    </tr>
+                    <tr v-for="item in items" >
+                        <td>{{ item.attributes.title }}</td>
+                        <td>{{ item.attributes.start_at | moment }}</td>
+                        <td>{{ item.attributes.end_at | moment }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
